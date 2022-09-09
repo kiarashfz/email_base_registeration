@@ -17,3 +17,8 @@ class User(AbstractUser):
     # Removing email from REQUIRED_FIELDS without changing parent REQUIRED_FIELDS class attribute
     REQUIRED_FIELDS.remove('email')
     USERNAME_FIELD = 'email'
+
+    # By default django send username as str
+    # I've changed it to email for my custom User
+    def __str__(self):
+        return self.email
