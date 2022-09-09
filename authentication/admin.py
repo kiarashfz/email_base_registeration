@@ -5,6 +5,9 @@ from authentication.models import User
 
 
 class CustomUserAdmin(UserAdmin):
+    """
+    CustomUserAdmin is the same as UserAdmin, except that it hasn't username in any of fields
+    """
     model = User
     list_display = ('email', 'is_staff', 'is_active',)
     list_filter = ('email', 'is_staff', 'is_active',)
