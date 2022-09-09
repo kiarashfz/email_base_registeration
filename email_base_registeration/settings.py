@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'authentication',
 
     # installed apps
-    'rest_framework'
+    'rest_framework',
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
