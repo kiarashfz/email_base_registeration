@@ -136,3 +136,6 @@ REST_FRAMEWORK = {
     # AutoSchema assign to DEFAULT_SCHEMA_CLASS to automatically load swagger
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
+
+# Login Url added for swagger session login
+LOGIN_URL = 'admin/login'
