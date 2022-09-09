@@ -2,17 +2,15 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 from authentication.manager import CustomUserManager
+from django.utils.translation import ugettext_lazy as _
 
 
 class User(AbstractUser):
     objects = CustomUserManager()
 
-    # Email as a username field must be unique
-    # I've just added a unique constraint to email field instead of defining again email field
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=['email'], name='email')
-        ]
+    # Set username field to None, because it was defined in AbstractUser & I don't want it
+    username = None
+    email = models.EmailField(_('email address'), unique=True)
 
     # The field named as the 'USERNAME_FIELD' for a custom user model must not be included in 'REQUIRED_FIELDS'
     REQUIRED_FIELDS = AbstractUser.REQUIRED_FIELDS[:]
