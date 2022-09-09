@@ -14,3 +14,8 @@ class UserSerializer(serializers.ModelSerializer):
         # make_password method hashed user password then save it in DB
         validated_data['password'] = make_password(validated_data['password'])
         return super(UserSerializer, self).create(validated_data)
+
+    def update(self, instance, validated_data):
+        # make_password method hashed user password then save it in DB
+        validated_data['password'] = make_password(validated_data['password'])
+        return super().update(instance, validated_data)
