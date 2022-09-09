@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
     # installed apps
     'rest_framework',
-    'rest_framework_swagger',
+    'drf_yasg',  # swagger ui package
 ]
 
 MIDDLEWARE = [
