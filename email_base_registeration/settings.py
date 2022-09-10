@@ -92,15 +92,15 @@ WSGI_APPLICATION = 'email_base_registeration.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.postgresql',
-         'NAME': env('POSTGRES_NAME'),
-         'USER': env('POSTGRES_USER'),
-         'PASSWORD': env('POSTGRES_PASSWORD'),
-         'HOST': 'db',
-         'PORT': 5432,
-     }
- }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('POSTGRES_NAME'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_PASSWORD'),
+        'HOST': 'db',
+        'PORT': 5432,
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -172,11 +172,16 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
         },
+        'file_handler': {
+            'class': 'logging.FileHandler',
+            'formatter': 'verbose',
+            'filename': BASE_DIR / 'loggs.log'
+        },
     },
     'loggers': {
         'django': {
-            'handlers': ['console'],
-            'level': 'INFO',
+            'handlers': ['console', 'file_handler'],
+            'level': env('DJANGO_LOG_LEVEL', default='INFO'),
             'propagate': True,
         },
     },
