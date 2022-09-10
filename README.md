@@ -22,12 +22,13 @@ $ touch .env
 #### - sample .env content:
 
 ```bash
-POSTGRES_DB=postgres
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
 POSTGRES_NAME=postgres
 POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres 
+POSTGRES_PASSWORD=postgres
+SECRET_KEY=YOUR_SECRET_KEY
+DEBUG=1
+ALLOWED_HOST=*
+DJANGO_LOG_LEVEL=INFO
 ```
 > **_NOTE:_**  You should put your secure data in .env file. so change it in production mode.
 
