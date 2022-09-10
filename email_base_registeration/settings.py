@@ -147,7 +147,21 @@ AUTH_USER_MODEL = 'authentication.User'
 # Django rest framework configurations
 REST_FRAMEWORK = {
     # AutoSchema assign to DEFAULT_SCHEMA_CLASS to automatically load swagger
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+
+    # set default pagination
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+
+    # Ban users after multiple requests using throttling
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '500/day',
+        'user': '1000/day',
+    }
 }
 
 # Login Url added for swagger session login
