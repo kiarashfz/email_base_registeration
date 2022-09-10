@@ -4,8 +4,10 @@ charset-normalizer==2.1.1
 coreapi==2.3.3
 coreschema==0.0.4
 Django==3.2
+django-environ==0.9.0
 djangorestframework==3.13.1
 drf-yasg==1.21.3
+gunicorn==20.1.0
 idna==3.3
 inflection==0.5.1
 itypes==1.2.0
