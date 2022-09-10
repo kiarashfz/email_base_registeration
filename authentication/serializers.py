@@ -17,5 +17,6 @@ class UserSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         # make_password method hashed user password then save it in DB
-        validated_data['password'] = make_password(validated_data['password'])
+        if validated_data.get('password'):  # check if it exists for patch method
+            validated_data['password'] = make_password(validated_data['password'])
         return super().update(instance, validated_data)
