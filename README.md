@@ -42,3 +42,10 @@ $ sh runner.sh
 ```sh
 0.0.0.0:8000
 ```
+> **_NOTE:_**  Now you have a superuser to using hostname/admin panel or using admin permission required APIs
+> 
+> ### superuser:
+> 
+> username/email: admin@admin.admin
+> 
+> password: admin
