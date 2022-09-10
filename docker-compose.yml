@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+ db:
+   container_name: db
+   restart: always
+   image: postgres
+   volumes:
+     - ./data/db:/var/lib/postgresql/data
+   environment:
+     - POSTGRES_DB=${POSTGRES_DB}
+     - POSTGRES_USER=${POSTGRES_USER}
+     - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+ web:
+   container_name: web
+   restart: always
+   build: .
+   volumes:
+     - .:/code
+   expose:
+     - "8000"
+   environment:
+     - POSTGRES_NAME=${POSTGRES_NAME}
+     - POSTGRES_USER=${POSTGRES_USER}
+     - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+   depends_on:
+     - db
+     - nginx
+ nginx:
+   build: './nginx'
+   container_name: 'nginx'
+   restart: 'always'
+   ports:
+     - "8000:80"
+   volumes:
+     - type: 'bind'
+       source: './static'
+       target: '/web/static'
