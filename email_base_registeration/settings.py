@@ -97,7 +97,7 @@ DATABASES = {
         'NAME': env('POSTGRES_NAME'),
         'USER': env('POSTGRES_USER'),
         'PASSWORD': env('POSTGRES_PASSWORD'),
-        'HOST': 'db',
+        'HOST': 'localhost',
         'PORT': 5432,
     }
 }
@@ -172,15 +172,15 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
         },
-        'file_handler': {
+        'authenticatin_file_handler': {
             'class': 'logging.FileHandler',
             'formatter': 'verbose',
-            'filename': BASE_DIR / 'loggs.log'
+            'filename': BASE_DIR / 'loggs/authenticatin.log'
         },
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file_handler'],
+            'handlers': ['console', 'authenticatin_file_handler'],
             'level': env('DJANGO_LOG_LEVEL', default='INFO'),
             'propagate': True,
         },
