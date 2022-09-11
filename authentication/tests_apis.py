@@ -60,3 +60,13 @@ class AccountTests(APITestCase, URLPatternsTestCase):
         response = self.client.get(user_url, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['id'], user.id)
+
+    def test_delete_my_user(self):
+        """
+        Ensure user can get delete own user object.
+        """
+        url = reverse('user-list')
+        user = self.set_basic_authentication(is_admin=False)
+        user_url = f'{url}{user.id}/'
+        response = self.client.delete(user_url, format='json')
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
