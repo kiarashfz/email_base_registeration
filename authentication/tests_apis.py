@@ -70,3 +70,16 @@ class AccountTests(APITestCase, URLPatternsTestCase):
         user_url = f'{url}{user.id}/'
         response = self.client.delete(user_url, format='json')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+    def test_partial_update_my_user(self):
+        """
+        Ensure user can partial update own user object.
+        """
+        url = reverse('user-list')
+        user = self.set_basic_authentication(is_admin=False)
+        data = {
+            "email": "user@new_email.user"
+        }
+        user_url = f'{url}{user.id}/'
+        response = self.client.patch(user_url, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
