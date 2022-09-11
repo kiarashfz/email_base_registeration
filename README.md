@@ -61,3 +61,5 @@ YOUR.OWN.SERVER.IP/redoc
 > password: admin
 
 > **_WARNING:_** `Change superuser password in production mode for security reasons.`
+
+You can also use postman collection placed in documentation and import it to your own postman.
