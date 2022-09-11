@@ -38,9 +38,17 @@ $ ./runner.sh
 or
 $ sh runner.sh
 ```
-####  5. Now open your browser and paste this url
+####  5. Now open your browser and paste these urls and enjoy it :wink:
 ```sh
-0.0.0.0:8000
+0.0.0.0
+or
+YOUR.OWN.SERVER.IP
+```
+- See also for API documentations
+```sh
+0.0.0.0/redoc
+or
+YOUR.OWN.SERVER.IP/redoc
 ```
 > **_NOTE:_**  Now you have a superuser to using hostname/admin panel or using admin permission required APIs
 > 
