@@ -161,7 +161,10 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_RATES': {
         'anon': '500/day',
         'user': '1000/day',
-    }
+    },
+
+    # API testing configurations
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
 
 # Login Url added for swagger session login
