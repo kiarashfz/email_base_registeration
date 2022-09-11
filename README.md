@@ -49,3 +49,5 @@ $ sh runner.sh
 > username/email: admin@admin.admin
 > 
 > password: admin
+
+> WARNING: `Change superuser password in production mode for security reasons.`
