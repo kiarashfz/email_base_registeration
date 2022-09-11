@@ -33,6 +33,7 @@ DJANGO_LOG_LEVEL=INFO
 > **_NOTE:_**  You should put your secure data in .env file. so change it in production mode.
 
 #### 4. The final step is running runner.sh file with your terminal
+> **_NOTE:_**  This command will download some docker images from dockerhub, so you may need to use a VPN.
 ```bash
 $ ./runner.sh
 or
@@ -58,4 +59,4 @@ YOUR.OWN.SERVER.IP/redoc
 > 
 > password: admin
 
-> WARNING: `Change superuser password in production mode for security reasons.`
+> **_WARNING:_** `Change superuser password in production mode for security reasons.`
