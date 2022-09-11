@@ -22,6 +22,7 @@ $ touch .env
 #### - sample .env content:
 
 ```bash
+POSTGRES_DB=postgres
 POSTGRES_NAME=postgres
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
