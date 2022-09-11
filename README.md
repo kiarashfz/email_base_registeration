@@ -6,7 +6,7 @@ I've used version 3.2 of Django because it's the latest LTS version.
 | Docker      | Docker compose |
 | ----------- | ----------- |
 ## Installation
-#### 1. First step is cloning the ptoject
+#### 1. First step is cloning the project
 ```bash
 $ git clone https://github.com/kiarashfz/email_base_registeration.git
 ```
