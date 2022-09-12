@@ -1,4 +1,7 @@
-# EMAIL BASE REGISTRATION 
+# EMAIL BASE REGISTRATION  
+
+
+wew
 
 This is a Django project that uses an email instead of a username for users.
 I've used version 3.2 of Django because it's the latest LTS version.
